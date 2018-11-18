@@ -1,0 +1,20 @@
+{
+  "name": "webapi",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "express-router": "0.0.1",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "mongodb": "^3.1.8",
+    "morgan": "~1.9.0",
+    "node": "^11.1.0"
+  }
+}
