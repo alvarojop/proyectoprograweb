@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
-var url = 'mongodb://localhost:27017';
+var url = 'mongodb://mongo:27017';
 var dbname = 'MongoDB';
 var objectId = require('mongodb').ObjectID;
 var db;
