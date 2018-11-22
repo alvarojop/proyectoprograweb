@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
-var url = 'mongodb://mongo:27017';
+var url = 'mongodb://104.40.0.195:27017';
 var dbname = 'MongoDB';
 var objectId = require('mongodb').ObjectID;
 var db;
@@ -23,6 +23,7 @@ router.post('/api/v1/factura/create/', function(req, res, next) {
     nombre: req.body.nombre,
     anulada: req.body.anulada
   }
+  
   db.collection('Facturas').insertOne(factura, function(err, result){
     assert.equal(null, err);
     if (err) {

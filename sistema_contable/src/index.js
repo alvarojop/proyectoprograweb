@@ -34,7 +34,7 @@ class Factura extends React.Component {
   addFactura(factura) {//create a new factura
     let facturas = this.state.facturas;
     facturas.push(factura);
-    axios.post('http://localhost:3001/api/v1/factura/create/', factura)
+    axios.post('http://168.62.28.234:3001/api/v1/factura/create/', factura)
         .then(res => {
             console.log(res);
             this.setState({facturas: facturas});
@@ -43,7 +43,7 @@ class Factura extends React.Component {
   }
 
   componentDidMount() {//load the local storage data after the component renders
-    axios.get('http://localhost:3001/api/v1/factura/read/')
+    axios.get('http://168.62.28.234:3001/api/v1/factura/read/')
         .then(res => {
             console.log(res);
             const facturas = res.data.facturas;
@@ -54,7 +54,7 @@ class Factura extends React.Component {
   editFactura(newSerie, newNumero, newFecha, newNit, newNombre, newAnulada, currentlyEditing) {//edit an existing factura
     let facturas = this.state.facturas;
     facturas[currentlyEditing] = {_id: facturas[currentlyEditing]._id, serie: newSerie, numero: newNumero, fecha: newFecha, nit: newNit, nombre: newNombre, anulada: newAnulada};
-    axios.put('http://localhost:3001/api/v1/factura/update/' + currentlyEditing, facturas)
+    axios.put('http://168.62.28.234:3001/api/v1/factura/update/' + currentlyEditing, facturas)
         .then(res => {
             console.log(res);
             this.setState({facturas: facturas});
@@ -65,7 +65,7 @@ class Factura extends React.Component {
   deleteFactura(index) {//delete an existing factura
     let facturas = this.state.facturas;
     const factura = facturas[index];
-    axios.delete('http://localhost:3001/api/v1/factura/delete/' + factura._id)
+    axios.delete('http://168.62.28.234:3001/api/v1/factura/delete/' + factura._id)
         .then(res => {
             console.log(res);
             facturas.splice(index, 1);
